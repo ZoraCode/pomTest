@@ -18,18 +18,24 @@ body{
   width: 1000px;
   height: 2594px;
 }
+.sec1 .a1 .title{
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+.sec1 .a1 .title img,
+.sec1 .a1 .video img{
+  display: block;
+  margin: 0 auto;
+}
+.sec1 .a1 .video p{
+  color: #fff;
+  text-align: end;
+}
+
 .sec1 .img li{
   width: 841px;
   height: 489px;
 }
-
-
-
-
-
-
-
-
 
 
 
