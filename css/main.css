@@ -17,6 +17,10 @@ body{
   margin: 0 auto;
   width: 1000px;
   height: 2594px;
+  margin-bottom: 100px;
+}
+.sec1 .a1{
+  margin-bottom: 180px;
 }
 .sec1 .a1 .title{
   padding-top: 100px;
@@ -30,33 +34,84 @@ body{
 .sec1 .a1 .video p{
   color: #fff;
   text-align: end;
+  font-size: 20px;
+  padding: 20px 70px 0 0;
 }
-
 .sec1 .img li{
-  width: 841px;
-  height: 489px;
+  /* width: 841px;
+  height: 489px; */
+  /* position: relative; */
+}
+.sec1 .img li:nth-child(1) img,
+.sec1 .img li:nth-child(3) img{
+  position: relative;
+  left: 159px;
+}
+.sec1 .img li:nth-child(2) img{
+  position: relative;
+  top: -100px;
+}
+.sec1 .img li:nth-child(3) img{
+  position: relative;
+  top: -200px;
+}
+.sec1 .a2 .title{
+  margin-bottom: 25px;
+}
+.sec1 .a2 .title img{
+  display: block;
+  margin: 0 auto;
 }
 
-
-
-
+.sec2 .a1 .title{
+  margin-bottom: 60px;
+}
+.sec2 .a1 .title img{
+  display: block;
+  margin: 0 auto;
+}
 
 
 .sec2 .tab_nav .tab{
   position: relative; 
 }
+.sec2 .tab_nav .tab li a{
+  position: absolute;
+  height: 150px;
+  width: 240px;
+  left: 65px;
+  text-indent: -10000em;
 
-.tab_nav li a.active{
+}
+.sec2 .tab_nav .tab li a.click2{
+  transform: translateY(153px);
+}
+.sec2 .tab_nav .tab li a.click3{
+  transform: translateY(306px);
+}
+.sec2 .tab_nav li a.active{
   display:block;
 }
-
-.tab_ul li{
+.sec2 .tab_ul li{
   display: none;
 }
-.tab_ul li:first-child{
+.sec2 .tab_ul li:first-child{
   display: block;
 }
+.sec2 .tab_ul li img{
+  display: block;
+  margin: 0 auto;
+}
 
+.sec2 .deco{
+  position: relative;
+}
+.sec2 .deco img{
+  position: absolute;
+  bottom: -120px;
+  left: 20px;
+  z-index: 10;
+}
 
 
 
@@ -65,6 +120,7 @@ body{
   margin: 0 auto;
   width: 1000px;
   height: 1294px;
+  position: relative;
 }
 
 .sec3 .background{
@@ -96,6 +152,10 @@ body{
   width: 1000px;
   height: 635px;
 }
+
+.sec5{
+
+}
 .sec5 fieldset{
   margin-top: 50px;
 }
@@ -106,6 +166,7 @@ body{
   width: 559px;
   height: 36px;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 .sec5 fieldset form{
   display: flex;
@@ -137,4 +198,86 @@ body{
   font-size: 16px;
   text-align: start;
   transform: translateX(530px);
+  margin-bottom: 100px;
+}
+#checked, #freecheck{
+  width: 20px;
+  height: 20px;  
+}
+.sec5 .set{
+  padding: 0 210px 0 210px;
+}
+.sec5 .set label{
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 3em;
+}
+.sec5 .set hr{
+  width: 580px;
+}
+.sec5 .set .tmi li{
+  font-size: 18px;
+  line-height: 2em;
+}
+.sec5 .set .tmi li:first-child{
+  padding-top: 15px;
+}
+.sec5 .set .tmi li em{
+  font-weight: bold;
+}
+.sec5 .grey{
+  padding-top: 30px;
+  color: #888888;
+  font-weight: 100;
+  line-height: 1.6em;
+  padding-bottom: 60px;
+}
+.sec5 .btn .butn{
+  display: block;
+  margin: 0 auto;
+  width: 408px;
+  height: 92px;
+  line-height: 90px;
+  font-size: 50px;
+  letter-spacing: -1px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #ac218b;
+  color: #fff;
+}
+.sec5 p.line{
+  text-align: center;
+}
+
+
+.sec6 .title img{
+  display: block;
+}
+.sec6 .tab_nav .tab{
+  display: flex;
+}
+.sec6 .tab_nav .tab li{
+  width: 25%;
+}
+.sec6 .tab_nav .tab li a{
+  position: absolute;
+  display: block;
+  width: 250px;
+  height: 305px;
+  text-indent: -1000em;
+}
+
+.sec6 .tab_nav li a.active{
+  display:block;
+}
+.sec6 .tab_ul li{
+  display: none;
+}
+.sec6 .tab_ul li:first-child{
+  display: block;
+}
+.sec6 .tab_ul li img{
+  display: block;
+  margin: 0 auto;
 }
