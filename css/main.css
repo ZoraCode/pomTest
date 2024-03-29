@@ -167,6 +167,8 @@ body{
   right: 0;
 }
 .sec3 ul{
+  width: 800px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   gap: 30px;
