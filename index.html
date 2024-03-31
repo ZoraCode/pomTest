@@ -143,31 +143,31 @@
       </legend>
       
       <form action="">
-        <div>
+        <div class="tag">
           <label for="username">약사명</label>
-          <input type="name" id="username" required>
+          <input type="name" id="username" minlength="2" maxlength="5" required>
         </div>
-        <div>
+        <div class="tag">
           <label for="usernumer">휴대전화</label>
           <input type="tel" id="usernumber" required>
         </div>
-        <div>
+        <div class="tag">
           <label for="userclass">약국명</label>
           <input type="name" id="userclass" required>
         </div>  
-        <div>
+        <div class="tag">
           <label for="usersearch">약국주소</label>
           <input type="text" id="sample6_postcode">
           <input type="button" id="btn" 
           onclick="sample6_execDaumPostcode()" value="우편번호찾기"><br>
         </div>
-        <div>
+        <div class="tag">
           <input type="text" id="sample6_address">
         </div>
-        <p>*약국주소가 아닐 경우 발송이 제한됩니다.</p>
-      </form>
+        <p class="col">*약국주소가 아닐 경우 발송이 제한됩니다.</p>
+     
 
-
+    <div class="setcall">
       <div class="set">
         <input type="checkbox" name="checked" id="checked" value="동의" checked>
         <label for="checked">개인정보 수집 및 이용 동의(필수)</label>
@@ -193,18 +193,18 @@
           그러나 동의를 거부할 경우 존슨앤존슨의 제품 또는 서비스에 대한 <br>
           마케팅/홍보 정보를 받아 보실 수 없습니다. </p>
       </div>
-
+    </div>
       <div class="btn">
-        <button type="button" class="butn" onclick="">
+        <button type="submit" class="butn" onclick="">
           <!-- <a href=""> -->
             참여 완료
           <!-- </a> -->
         </button>
       </div>
 
+      <p class="grey line"> * 유의사항 : 준비된 타이레놀산 3종 POSM이 소진될 경우, 다른 제작물로 대체될 수 있습니다.</p>
+    </form>
 
-      <p class="grey line"> * 유의사항 : 준비된 타이레놀산 3종 POSM이 소진될 경우, 다른 제작물로 대체될 수 있습니다.
-      </p>
     </fieldset>
   </section>
 
@@ -265,12 +265,9 @@
     function sample6_execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
+                
+                let addr = ''; // 주소 변수
+                let extraAddr = ''; // 참고항목 변수
 
                 //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
                 if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
@@ -279,7 +276,7 @@
                     addr = data.jibunAddress;
                 }
                 if(data.userSelectedType === 'R'){
-                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)   
+
                     if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
                         extraAddr += data.bname;
                     }
@@ -318,6 +315,30 @@ document.addEventListener('DOMContentLoaded', function() {
       imgOff.style.display = 'none';
       form.style.display = 'none';
   });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const button = document.querySelector('.butn');
+    const form = document.querySelector('form');
+
+    button.addEventListener('click', function(event) {
+        // form 요소의 입력 필드를 가져옵니다.
+        const inputs = form.querySelectorAll('input[type="name"], input[type="tel"], input[type="text"]');
+
+        // 입력 필드가 모두 작성되었는지 확인합니다.
+        let isFormValid = true;
+        inputs.forEach(function(input) {
+            if (input.value.trim() === '') { // 값이 비어있는 경우
+                isFormValid = false;
+            }
+        });
+
+        // 폼이 유효하지 않은 경우 경고를 표시하고 제출을 중지합니다.
+        if (!isFormValid) {
+            event.preventDefault(); // 기본 이벤트(제출) 중지
+            alert('모두 작성해 주세요.');
+        }
+    });
 });
 
 
