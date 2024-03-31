@@ -23,7 +23,7 @@ body{
   margin-bottom: 180px;
 }
 .sec1 .a1 .title{
-  padding-bottom: 60px;
+  padding-bottom: 10px;
 }
 .sec1 .a1 .title img,
 .sec1 .a1 .video img{
@@ -48,11 +48,11 @@ body{
 }
 .sec1 .img li:nth-child(2) img{
   position: relative;
-  top: -100px;
+  top: -120px;
 }
 .sec1 .img li:nth-child(3) img{
   position: relative;
-  top: -200px;
+  top: -240px;
 }
 .sec1 .a2 .title{
   margin-bottom: 25px;
@@ -175,6 +175,18 @@ body{
   position: relative;
   top: 500px;
 }
+.sec3 ul li div{
+  position: relative;
+  width: 374px;
+  height: 249px;
+}
+.sec3 ul li div img{
+  position: absolute;
+  top: 0; bottom: 0; right: 0; left: 0;
+}
+.sec3 ul li div img.clback{
+  z-index: 2;
+}
 
 .sec4{
   background: url(../image/bg.png) no-repeat; 
@@ -183,23 +195,30 @@ body{
   height: 635px;
 }
 
-.sec5{
 
-}
 .sec5 fieldset{
   margin-top: 50px;
+  position: relative;
 }
 .sec5 fieldset legend{
-  background: url(../image/fileset.png) no-repeat;
-  text-indent: -1000em;
+  /* background: url(../image/fileset.png) no-repeat; */
+  /* text-indent: -1000em; */
+  /* width: 559px; */
+  /* height: 36px; */
+  height: 60px;
   display: block;
-  width: 559px;
-  height: 36px;
-  margin: 0 auto;
   margin-bottom: 30px;
 }
+.sec5 fieldset legend img{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.sec5 fieldset legend img.off{
+  display: none;
+}
 .sec5 fieldset form{
-  display: flex;
+  display: none;
   flex-direction:column;
   text-align: right;
   font-size: 24px;

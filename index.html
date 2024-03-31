@@ -137,7 +137,10 @@
   <section class="sec5">
     <fieldset>
 
-      <legend>POSM 수령에 동의하시면 체크해 주세요</legend>
+      <legend>
+        <img class="on" src="./image/filesets.png" alt="">
+        <img class="off" src="./image/fileset.png" alt="">
+      </legend>
       
       <form action="">
         <div>
@@ -298,6 +301,26 @@
             }
         }).open();
     }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  let imgOn = document.querySelector('.sec5 fieldset legend img.on'),
+      imgOff = document.querySelector('.sec5 fieldset legend img.off'),
+      form = document.querySelector('.sec5 fieldset form');
+
+  imgOn.addEventListener('click', function(){
+      imgOn.style.display = 'none';
+      imgOff.style.display = 'block';
+      form.style.display = 'flex';
+  });
+  imgOff.addEventListener('click', function() {
+      imgOn.style.display = 'block';
+      imgOff.style.display = 'none';
+      form.style.display = 'none';
+  });
+});
+
+
 </script>
 </body>
 </html>

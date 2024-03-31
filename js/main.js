@@ -50,6 +50,17 @@ btnClick.forEach(item => {
 });
 
 
+function handleClbackClick(event) {
+  event.target.style.transition = "opacity .5s";
+  event.target.style.opacity = 0;
+}
+
+// .sec3 ul li div img.clback 요소들을 모두 가져와서 클릭 이벤트 리스너를 등록함
+const clbackImages = document.querySelectorAll('.sec3 ul li div img.clback');
+clbackImages.forEach(clbackImage => {
+  clbackImage.addEventListener('click', handleClbackClick);
+});
+
 
 
 
